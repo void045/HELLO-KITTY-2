@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Kitty Star Hop</title>
+    <meta
+      name="description"
+      content="A cute mobile-friendly love letter site with a playful bow-kitty platformer, dreamy visuals, and sweet sounds."
+    />
+    <meta name="theme-color" content="#ff7aa8" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="background-glow background-glow-left"></div>
+    <div class="background-glow background-glow-right"></div>
+
+    <header class="hero">
+      <nav class="top-bar">
+        <div class="brand">
+          <span class="brand-mark">❤</span>
+          <span>Kitty Star Hop</span>
+        </div>
+        <button class="sound-chip" id="soundToggle" type="button">
+          Sounds On
+        </button>
+      </nav>
+
+      <section class="hero-card">
+        <div class="hero-copy">
+          <p class="eyebrow">Made for the sweetest girl</p>
+          <h1>A bow-kitty love note she can play right on her phone.</h1>
+          <p class="hero-text">
+            Soft candy skies, cute sparkly sounds, touch controls, and a tiny
+            platform adventure built with sweet Hello Kitty energy.
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-button" href="#play">Play The Game</a>
+            <a class="secondary-button" href="#dream-board">See The Cute Ideas</a>
+          </div>
+
+          <div class="hero-badges">
+            <span>Mobile friendly</span>
+            <span>Touch controls</span>
+            <span>Original cute sounds</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="sticker sticker-heart"></div>
+          <div class="sticker sticker-bow"></div>
+          <div class="kitty-card">
+            <div class="kitty-face">
+              <span class="ear ear-left"></span>
+              <span class="ear ear-right"></span>
+              <span class="bow bow-left"></span>
+              <span class="bow bow-right"></span>
+              <span class="bow-knot"></span>
+              <span class="eye eye-left"></span>
+              <span class="eye eye-right"></span>
+              <span class="nose"></span>
+              <span class="whisker whisker-left-top"></span>
+              <span class="whisker whisker-left-bottom"></span>
+              <span class="whisker whisker-right-top"></span>
+              <span class="whisker whisker-right-bottom"></span>
+            </div>
+            <div class="floating-charms">
+              <span>✦</span>
+              <span>❤</span>
+              <span>✿</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section section-play" id="play">
+        <div class="section-heading">
+          <p class="eyebrow">Play Together</p>
+          <h2>Double-jump, slash dragons, and collect candy shields.</h2>
+          <p>
+            Tap the on-screen buttons on phone, or use arrow keys and space on
+            desktop. Hold jump for height, tap twice for a double jump, and use
+            Slash when dragons block the candy clouds.
+          </p>
+        </div>
+
+        <div class="game-shell">
+          <div class="game-topbar">
+            <div class="status-pill">
+              <span>Charms</span>
+              <strong id="scoreLabel">0 / 6</strong>
+            </div>
+            <div class="status-pill">
+              <span>Best</span>
+              <strong id="bestLabel">0</strong>
+            </div>
+            <div class="status-pill">
+              <span>Shield</span>
+              <strong id="shieldLabel">0</strong>
+            </div>
+            <div class="status-pill">
+              <span>Sword</span>
+              <strong id="swordLabel">No</strong>
+            </div>
+            <button class="small-button" id="restartButton" type="button">
+              Restart
+            </button>
+          </div>
+
+          <div class="canvas-frame">
+            <canvas
+              id="gameCanvas"
+              width="960"
+              height="540"
+              aria-label="Kitty platform game"
+            ></canvas>
+            <div class="game-overlay" id="gameOverlay">
+              <div class="overlay-card">
+                <p class="eyebrow">Tiny Love Platformer</p>
+                <h3>Help the bow kitty collect every charm.</h3>
+                <p>
+                  Double jumps, candy shields, sneaky spike traps, tiny dragons,
+                  and one sparkly sword are waiting in the clouds.
+                </p>
+                <button class="primary-button" id="startButton" type="button">
+                  Start Playing
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-bottom">
+            <p class="hint" id="hintLabel">
+              Tip: collect candy for a shield, grab the sword, then slash dragons
+              before they bump into you.
+            </p>
+
+            <div class="controls-card" aria-label="touch controls">
+              <button class="control-button" data-control="left" type="button">
+                ◀
+              </button>
+              <button class="control-button" data-control="right" type="button">
+                ▶
+              </button>
+              <button class="control-button control-jump" data-control="jump" type="button">
+                Jump
+              </button>
+              <button class="control-button control-attack" data-control="attack" type="button">
+                Slash
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-features">
+        <div class="mini-grid">
+          <article class="mini-card">
+            <p class="mini-icon">⚔</p>
+            <h3>Sword Action</h3>
+            <p>
+              Grab the sparkly sword, slash dragons, and trigger big candy-burst
+              effects when you land a hit.
+            </p>
+          </article>
+          <article class="mini-card">
+            <p class="mini-icon">🍬</p>
+            <h3>Candy Shields</h3>
+            <p>
+              Candy pickups create a soft shield bubble so traps and spikes feel
+              exciting without being too punishing.
+            </p>
+          </article>
+          <article class="mini-card">
+            <p class="mini-icon">✦</p>
+            <h3>More Effects</h3>
+            <p>
+              Double-jump rings, dragon sparks, hit shake, glow trails, and
+              richer sound effects make each move feel cooler.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="dream-board">
+        <div class="section-heading">
+          <p class="eyebrow">Dream Game Ideas</p>
+          <h2>Your cute game brief, turned into a polished board.</h2>
+          <p>
+            These cards capture the modern platformer ideas you listed, now
+            styled like a playful concept deck.
+          </p>
+        </div>
+
+        <div class="idea-grid">
+          <article class="idea-card">
+            <h3>Modern Movement</h3>
+            <p>
+              Tight movement comes from coyote time, jump buffering, variable
+              jump height, and gentle wall slide control so mistakes feel fair.
+            </p>
+          </article>
+          <article class="idea-card">
+            <h3>Action-RPG Twist</h3>
+            <p>
+              Add elemental reactions, quick character swapping, and puzzle
+              spaces where each hero changes the room in a different way.
+            </p>
+          </article>
+          <article class="idea-card">
+            <h3>Level Rhythm</h3>
+            <p>
+              Mix fast “flow” sections with slower puzzle rooms so the player
+              gets both momentum and discovery.
+            </p>
+          </article>
+          <article class="idea-card">
+            <h3>Player Controller</h3>
+            <p>
+              A clean finite state machine keeps Idle, Run, Jump, Fall, and Dash
+              behaviors modular and easy to tune.
+            </p>
+          </article>
+          <article class="idea-card">
+            <h3>Camera Logic</h3>
+            <p>
+              A good 2D camera follows softly, leans ahead at speed, and stays
+              locked inside each room for readability.
+            </p>
+          </article>
+          <article class="idea-card">
+            <h3>Enemy AI</h3>
+            <p>
+              Enemies patrol safely, sense edges, and switch into chase mode
+              when the player enters their vision cone.
+            </p>
+          </article>
+          <article class="idea-card">
+            <h3>Interactive Visuals</h3>
+            <p>
+              Shader-style distortions, layered particles, and background motion
+              make every jump feel magical and reactive.
+            </p>
+          </article>
+          <article class="idea-card">
+            <h3>Art Direction</h3>
+            <p>
+              Hand-drawn vectors, soft 2.5D lighting, or a candy monochrome look
+              all work beautifully beyond standard pixel art.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section love-note">
+        <div class="love-card">
+          <p class="eyebrow">A Sweet Ending</p>
+          <h2>For the girl who makes everything feel softer and brighter.</h2>
+          <p>
+            This little site is built like a gift: cute, playful, and easy to
+            open anytime on a phone whenever she wants a tiny smile.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Made with candy colors, soft jumps, and lots of love.</p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
